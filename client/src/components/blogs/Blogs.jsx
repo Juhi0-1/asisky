@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 
 const Blogs = () => {
 const [blogs, setBlogs] = useState([]);
+const [ date, setDate] = useState(new Date());
+
+
 
 useEffect(()=>{
      
@@ -38,7 +41,7 @@ useEffect(()=>{
              
              <div className='flex flex-col pt-20 text-center '> 
              <h1 className='font-bold text-3xl'>{blog.title}</h1>
-         
+             <p>"author {blog.id}"</p>
              {/* <p>{blog.desc}</p> */}
              <button className='showfull p-3 w-24 relative left-36 mt-3 rounded-xl hover:bg-red-900 hover:text-white border-2 border-gray-800' key={blog.id}><Link to={`/showfull/${blog.id}`}>View More</Link></button>
              </div>
